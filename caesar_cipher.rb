@@ -1,9 +1,7 @@
-puts "Please input sentence: "
+puts 'Please input sentence:'
 phrase = gets.chomp
-puts "Please input shift: "
+puts 'Please input shift:'
 shift = gets.chomp.to_i
-
-
 
 def caesar_cipher(phrase, shift = nil)
   cipher_array = phrase.chars.map do |char|
@@ -13,15 +11,12 @@ def caesar_cipher(phrase, shift = nil)
         ciph_ord.chr
       elsif char.match?(/[[:lower:]]/)
         ciph_ord = 97 + (char.ord + shift - 97) % 26
-        ciph_ord.chr 
-        
+        ciph_ord.chr
       end
-    else 
+    else
       char
-
     end
   end
-  
   p cipher_array.join
 end
 
